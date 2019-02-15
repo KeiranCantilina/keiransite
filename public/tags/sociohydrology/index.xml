@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sociohydrology on  </title>
+    <link>https://keirancantilina.github.io/tags/sociohydrology/</link>
+    <description>Recent content in sociohydrology on  </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019</copyright>
+    <lastBuildDate>Tue, 01 May 2018 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://keirancantilina.github.io/tags/sociohydrology/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sociohydrology in Western North Carolina</title>
+      <link>https://keirancantilina.github.io/project/backup-of-shielas-projects/nc-sociohydro-project/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://keirancantilina.github.io/project/backup-of-shielas-projects/nc-sociohydro-project/</guid>
+      <description>Collaborators B Cutts (NC State), R Emanuel (NC State), K Martin (NC State), KM Suttles (USFS), J Vose (USFS), D Wear (USFS), J Coulston (USFS)
+Timeline 2017-current
+Project Goal The goal of this project is to combine past and future hydrology model (i.e., Soil and Water Assessment Tool (SWAT)) outputs with demographics data to create maps and prioritize climate change preparation and adaptation strategies for especially vulnerable communities in Western North Carolina&amp;rsquo;s Upper Yadkin-Pee Dee Watershed.</description>
+    </item>
+    
+  </channel>
+</rss>

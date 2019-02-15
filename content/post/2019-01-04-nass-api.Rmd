@@ -1,0 +1,264 @@
+---
+title: "APIs to the Rescue (& the Census of Agriculture)"
+author: "Sheila Saia"
+date: '2019-01-04'
+categories: ["R"]
+tags: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, message = FALSE, warning = FALSE)
+```
+
+# Background
+
+Application program interfaces (APIs) help users access ("API request") and retrieve ("API response") data from web-based, data servers via programs like R, Python, etc. If you're interested in more details, several others before me have done a great job writing about API's and R: [this post by C. Waldhauser](https://www.r-bloggers.com/accessing-apis-from-r-and-a-little-r-programming/) and [this post by T. Clavelle](https://tclavelle.github.io/blog/r_and_apis/).
+
+I recently learned about a few R packages that help users interface directly with APIs and a few of these are especially interesting for water-minded, data loving people like me. For example the [`tidycensus` package](https://walkerke.github.io/tidycensus/) developed by [Kyle Walker](http://personal.tcu.edu/kylewalker/) allows R users to access the US Census API and download data directly into their R environment. It's awesome. Additionally, [I previously wrote about](https://sheilasaia.rbind.io/post/2018-08-04-usgs-rollify/) the US Geologic Survey and US Environmental Protection Agency's [`dataRetrieval` package](https://cran.r-project.org/web/packages/dataRetrieval/dataRetrieval.pdf) that interfaces with the National Water Information System API. Some APIs will require you to have an API key (e.g., the US Census) while others don't (e.g., the National Water Information System). The key is meant to ensure security on your end as well as on the end of the API administrator. In the case of the US Census, they can keep track of your queries and also make sure that you have permission to access certain types of data, etc. You can easily request an US Census API key [here](https://api.census.gov/data/key_signup.html) and read more about the US Census API [here](https://www.census.gov/data/developers/guidance/api-user-guide.html).
+
+But what if you're working with an API that doesn't already have an R package associated with it? This is the case for the data associated with the US Department of Agriculture National Agricultural Statistics Service (NASS). I could click through the options on NASS's Quick Stats page [on the web](https://quickstats.nass.usda.gov/) and download the data that way; however, I wanted to use R to access the Quick Stats API directly.
+
+Before jumping into the code, just a brief explainer on the NASS API. The NASS API includes two different types of data:
+
+1. NASS Agriculture Resource Management Survey (ARMS) - This survey includes data on the "production practices, resource use, and economic well-being of America's farms and ranches" [(NASS ARMS Webiste)](https://www.nass.usda.gov/Surveys/Guide_to_NASS_Surveys/Ag_Resource_Management/).
+
+
+2. NASS Census of Agriculture - This survey is conducted every 5 years and includes data on the number of US farms and ranches and the people who operate them (as long as more than $1000 was raised from associated agricultural goods). It also includes data on land use, land ownership, production practices, income, and expenses [(NASS Census of Agriculture Website)](https://www.nass.usda.gov/AgCensus/index.php).
+
+# Goals of This Post
+
+The main goal of this blog post is to:
+
+- Download and plot Agriculture Census data from NASS Quick Stats API using R.
+
+Special thanks to [Natalie Nelson](http://nelson.rbind.io/) of NC State University and Andrew Dau of NASS for some of the R code that I modified for this post.
+
+# Set Up
+
+First let's load the R libraries that we'll need to run the code in this post.
+
+```{r load libraries}
+library(httr)
+library(jsonlite)
+library(tidycensus)
+library(tidyverse)
+library(purrr)
+library(mapview)
+```
+
+The `httr` and `jsonlite` packages are necessary for interfacing with the Quick Stats API and reformatting API outputs so they can be used in R.
+
+Let's use the `tidycensus` package to get some county boundaries. This will provide some spatial context for our analysis.
+
+The `tidyverse` and `mapview` packages will help us wrangle and visualize the API outputs.
+
+The `purrr` package will help us repetitively apply the same function to each row of the API outputs.
+
+```{r first time census key, eval=FALSE}
+# If you've never used your tidycensus API key in your R session, run this:
+census_api_key("YOUR API KEY GOES HERE")
+```
+
+```{r not first time census key, include=FALSE}
+# If you've used your tidycensus API key in a previous R session, run this:
+options(tigris_use_cache = TRUE)
+```
+
+You'll have to also apply for a NASS API key. We'll use this later but will definite it here as a string. You can apply for a NASS API key [here](https://quickstats.nass.usda.gov/api)
+
+```{r define NASS api fake, eval=FALSE}
+nass_key <- "ADD YOUR NASS API KEY HERE"
+```
+
+```{r define NASS api real, include=FALSE}
+nass_key <- Sys.getenv("nass_key")
+```
+
+Now, we'll define the NASS url and path. In the path you'll have to specify what type of data you want to query. To specify these you can go to [https://quickstats.nass.usda.gov/](https://quickstats.nass.usda.gov/) to see all your commodity options. I haven't figured out another way to do this but please [contact me](mailto:ssaia@ncsu.edu) if you find an alternative.
+
+For this post I'm selecting the "AG_LAND" commodity, which includes information on the acreage of irrigated farm and ranch lands, because this is the wateR blog after all. Other commodities might include specific crops, etc. I'm also selecting the state of North Carolina (NC) because it seems to always be the subject of spatial mapping [(e.g., see this post)](https://r-spatial.github.io/sf/reference/geos_combine.html) in R and is also where I live. ;) You can also leave off the last "&state_alpha=NC" part of the string to get data from all states.
+
+```{r define strings}
+# NASS url
+nass_url <- "http://quickstats.nass.usda.gov"
+
+# commodity description of interest
+my_commodity_desc <- "AG LAND"
+
+# query start year
+my_year <- "2006"
+
+# state of interest
+my_state <- "NC"
+
+# final path string
+path_nc_irrig_land <- paste0("api/api_GET/?key=", nass_key, "&commodity_desc=", my_commodity_desc, "&year__GE=", my_year, "&state_alpha=", my_state)
+```
+
+# API Data Query
+
+Let's query the NASS API.
+
+```{r query api}
+raw_result_nc_irrig_land <- GET(url = nass_url, path = path_nc_irrig_land)
+```
+
+We can check to see if it worked by looking at `status_code`. To read more about the different status codes and their meaning you can visit [https://en.wikipedia.org/wiki/List_of_HTTP_status_codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
+
+```{r check status}
+raw_result_nc_irrig_land$status_code
+```
+
+Great! We're wanting to see status code 200 here. It means our query was received and responded to.
+
+# Reformatting API Query Output
+
+If we look at this in your RStudio session it will come in as a 'Large response' or in other words as a JSON object. For simplicity sake, we can think of this as a list of lists (i.e., nested lists). We'll ultimately convert this to a data frame because it's a little easier to view in R.
+
+We'll start unpacking the JSON object using `rawToChar()`. We can check the size and look at the first few characters.
+
+```{r to raw character string}
+char_raw_nc_irrig_land <- rawToChar(raw_result_nc_irrig_land$content)
+
+# check size of object
+nchar(char_raw_nc_irrig_land)
+
+# view first 50 characthers
+substr(char_raw_nc_irrig_land, 1, 50)
+```
+ 
+This is still a little hard to work with so let's use `fromJSON()` and convert the raw character strings to a large list. Next, we'll use `pmap_dfr` from the `purrr` package to loop over each list and bind it by row to make a data frame.
+ 
+```{r to df}
+list_raw_nc_irrig_land <- fromJSON(char_raw_nc_irrig_land)
+
+# view first element (it's big so we'll comment it here)
+# list_raw_ag_land[[1]]
+
+# apply rbind to each row of the list and convert to a data frame
+nc_irrig_land_raw_data <- pmap_dfr(list_raw_nc_irrig_land, rbind)
+
+# look at the data frame
+head(nc_irrig_land_raw_data)
+```
+
+This looks ok but there are still some things that would be nice to clean up. As mentioned above, we want to focus on the acres of irrigated lands in NC. For simplicity, we'll just look at farms/ranches with 2,000 ac or more under operation. Let's step through each line in the piped (i.e., `%>%`) code below. See the in-line comments for the details.
+
+```{r wrangle data}
+nc_irrigated <- nc_irrig_land_raw_data %>%
+  
+  # filter to select county level irrigation data where farms/ranches with 2,000+ ac operation
+  filter(agg_level_desc == "COUNTY") %>%
+  filter(unit_desc == "ACRES") %>%
+  filter(domaincat_desc == "AREA OPERATED: (2,000 OR MORE ACRES)") %>%
+
+  # trim white space from ends (note: 'Value' is a character here, not a number)
+  mutate(value_trim = str_trim(Value)) %>%
+  
+  # select only the columns we'll need
+  select(state_name, state_alpha, state_ansi, county_code, county_name, asd_desc,
+         agg_level_desc, year, prodn_practice_desc_char=prodn_practice_desc,
+         value_ac_per_yr_char=value_trim, unit_desc) %>%
+  
+  # filter out entries with codes '(D)' and '(Z)'
+  filter(value_ac_per_yr_char != "(D)" & value_ac_per_yr_char != "(Z)") %>% 
+  
+  # remove commas from number values and convert to R numeric class
+  mutate(value_ac_per_yr = as.numeric(str_remove(value_ac_per_yr_char, ","))) %>%
+  
+  # change blanks to underscores in prodn_practice_desc_char for latter processing
+  mutate(prodn_practice_desc = str_replace_all(str_to_lower(prodn_practice_desc_char),
+                                               "[ ]", "_")) %>%
+  
+  # remove unnecessary columns
+  select(-value_ac_per_yr_char, -prodn_practice_desc_char) %>%
+  
+  # we have 2007 and 2012 data and we want irrigated lands and total lands operated
+  # (to calculate a percentage of irrigated land) so we use n()>3 to filter out counties
+  # that do have both years and info on both irrigated and total lands operated
+  group_by(county_code) %>%
+  filter(n()>3) %>%
+  
+  # spread irrigated and total lands operated data and calculate percent irrigated
+  group_by(county_code, year) %>%
+  spread(prodn_practice_desc, value_ac_per_yr) %>%
+  mutate(percent_irrigated = round(irrigated/all_production_practices*100, 1)) %>%
+  
+  # make a column with the county name and year (we'll need this for plotting)
+  mutate(county_year = paste0(str_to_lower(county_name), "_", year)) %>%
+  
+  # make GEOID column to match up with county level spatial data (we'll need this for mapping)
+  mutate(GEOID = paste0(state_ansi, county_code))
+```
+
+Let's look at the first few rows of the final reformatted NASS data showing the amount of irrigated acres in NC for 2007 and 2012.
+
+```{r check data}
+head(nc_irrigated)
+```
+
+# Plotting NASS Data
+
+Now that we have this nicely formatted data, we can make some figures! Let's start by making some bar charts comparing the percentage of irrigated land in NC counties where data with available data for 2007 and 2012.
+
+```{r bar chart}
+ggplot(nc_irrigated) +
+  geom_col(aes(x = year, y = percent_irrigated), fill = "grey50") +
+  facet_wrap(~county_name) +
+  xlab("Year") +
+  ylab("Percent of Total Acres Irrigated (%)") +
+  theme_bw()
+```
+
+Looking at this figure, we can see that there was a higher percentage of irrigated land in 2007 for 9 out of 17 (i.e., ~53%) NC counties with available NASS data. We can summarize the total number of acres irrigated for all 17 counties for both 2007 and 2012 to verify this directly using `summarize()`.
+
+```{r irrigated summary}
+nc_irrigated_summary <- nc_irrigated %>%
+  group_by(year) %>%
+  summarize(sum_irrigated_ac = sum(irrigated),
+            sum_all_production_ac = sum(all_production_practices))
+
+nc_irrigated_summary
+```
+
+We see that 9,379 more acres were irrigated in 2007 compared to 2012 despite more acres of land being under production in 2012.
+
+Besides making some bar charts we can also map the irrigation percentages by county. For now, we'll just filter out the 2007 data for this visualization.
+
+```{r filter 2007 data}
+nc_irrigated_2007 <- nc_irrigated %>%
+  filter(year == 2007)
+```
+
+Next we'll use the `get_acs()` function in the `tidycensus` package with `geometry = TRUE` to download the [TIGER](https://www.census.gov/geo/maps-data/data/tiger.html) county boundaries shape (.shp) file for NC. The variable used here (i.e., "B19013_001") represents median income but you can use any variable you wish. We're mostly just interested in the spatial data associated with this and will ignore the tabular (i.e., median income) data.
+
+```{r get acs shp}
+nc_counties <- get_acs(geography = "county", state = "NC", variables = "B19013_001", 
+                       year = 2012, geometry = TRUE, survey = "acs5")
+```
+
+The second last step is to join `nc_irrigated_2007` to the county boundary spatial data.
+
+```{r join tab data to acs}
+nc_irrigated_map_2007 <- left_join(nc_counties, nc_irrigated_2007, by = "GEOID")
+```
+
+Now we'll use `mapview()` to make an interactive plot where counties are colored based on the percentage of irrigated land. You can hover your mouse over the counties to see the actual percentages.
+
+```{r}
+mapviewOptions(vector.palette = colorRampPalette(c("snow", "darkblue", "grey10")))
+mapview(nc_irrigated_map_2007, zcol = "percent_irrigated", legend = FALSE)
+```
+
+<br/>
+Some other thoughts that I wanted to mention before signing off:
+
+- Querying the NASS API was fairly straightforward, and despite needing to do some considerable data wrangling with the output, the `tidyverse` packages (i.e., `dplyr` and `tidyr`) helped a lot. I should note that I spent some time figuring out what the query outputs would look like for different commodities and what aspects of the query outputs I needed.
+
+- It was interesting to see that a higher percentage of acres were irrigated in NC in 2007 compared to 2012. I can't say what caused these differences based on these data alone, but it would be interesting to look into whether this finding was linked to the 2007 drought. According to other scientists who lived and researched water resources at the time, [the 2007 drought affected millions of people in NC](http://climate.ncsu.edu/climateblog?id=161). A longer time series of irrigated land might help with this as would overlapping these county level results with drought reports and crop losses.
+
+I can think of a number of other commodities that might be interesting to look at in the NASS Quick Stats data set. I'm assuming that some commonly farmed commodities (i.e., corn) might have more years and locations available. If you've used the NASS API for other applications or have any other questions/ideas please let me know!
+
+# Updates Since Posting
+
+Since first posting this, [Julien Reyes suggested](https://twitter.com/julianjon/status/1082849177917317120) using Nicholas Potter's package called `rnassqs` to help automate the NASS API portion of this post. You can read more about the `rnassqs` package [here](https://github.com/potterzot/rnassqs). Note to self that I need to check it out!

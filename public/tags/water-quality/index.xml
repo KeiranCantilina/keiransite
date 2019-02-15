@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>water-quality on  </title>
+    <link>https://keirancantilina.github.io/tags/water-quality/</link>
+    <description>Recent content in water-quality on  </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019</copyright>
+    <lastBuildDate>Sun, 22 Jul 2018 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://keirancantilina.github.io/tags/water-quality/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Modeling Water Quality in a Suburban Watershed</title>
+      <link>https://keirancantilina.github.io/project/backup-of-shielas-projects/mrgp-project/</link>
+      <pubDate>Sun, 22 Jul 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://keirancantilina.github.io/project/backup-of-shielas-projects/mrgp-project/</guid>
+      <description>Collaborators R Christie (Mianus River Gorge Preserve), C Nagy (Mianus River Gorge Preserve), MT Walter (Cornell University), PJ Sullivan (Cornell University)
+Timeline 2012-2015
+Project Goal The goal of this project was to test two spatial statistics approaches (i.e., kriging based on Euclidian or stream-wise distances) for predicting in-stream waterquality at unsampled locations in the Mianus River near Bedford, NY and Stanford, CT.
+Project Links Results of this project are currently unpublished.</description>
+    </item>
+    
+    <item>
+      <title>Phosphorus Cycling in Stream Biofilms</title>
+      <link>https://keirancantilina.github.io/project/backup-of-shielas-projects/paos-streams-project/</link>
+      <pubDate>Sun, 22 Jul 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://keirancantilina.github.io/project/backup-of-shielas-projects/paos-streams-project/</guid>
+      <description>Collaborators PJ Sullivan (Cornell University), JM Regan (Penn State), HJ Carrick (Central Michigan University), AR Buda (USDA-ARS), NA Locke (Penn State), MT Walter (Cornell University)
+Timeline 2014-2015
+Project Goal The goal of this project was to test (1) the impact of alternating anaerobic/aerobic conditions on phosphorus cycling in stream biofilms and (2) whether observed patterns mimicked those of polyphosphate accumulating organisms (PAOs) in specialized waste-water treatment plants.
+Project Links  Project GitHub Repository Project Peer-Reviewed Publication  Acknowledgements Special thanks to the Mianus River Gorge Preserve Research Award Program and the EPA STAR Program for supporting this work.</description>
+    </item>
+    
+    <item>
+      <title>Hydrologic Characterization Tool (HCT)</title>
+      <link>https://keirancantilina.github.io/project/backup-of-shielas-projects/hct-project/</link>
+      <pubDate>Sat, 31 Dec 2011 00:00:00 +0100</pubDate>
+      
+      <guid>https://keirancantilina.github.io/project/backup-of-shielas-projects/hct-project/</guid>
+      <description>Collaborators J Boll (Washington State University Pullman), ES Brooks (University of Idaho), Z Easton (Virginia Tech), L Kurkalova (North Carolina Ag &amp;amp; Tech), B Rittenburg (Univesrity of Idaho), A Squires (University of Idaho), TS Steenhuis (Cornell University), G Vellidis (University of Georgia), JD Wulfhorst (University of Idaho)
+Timeline 2007-2011
+Project Goal The goal of this project was to use an exisiting process-based model (i.e., the USDA WEPP model to develop a web-based hydrologic characterization tool (HCT) that could be used by water resources managers to evaluate the impact of agricultural best management practices on water quality (i.</description>
+    </item>
+    
+  </channel>
+</rss>

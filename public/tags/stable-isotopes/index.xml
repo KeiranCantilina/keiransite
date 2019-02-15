@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>stable-isotopes on  </title>
+    <link>https://keirancantilina.github.io/tags/stable-isotopes/</link>
+    <description>Recent content in stable-isotopes on  </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019</copyright>
+    <lastBuildDate>Tue, 01 May 2018 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://keirancantilina.github.io/tags/stable-isotopes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ecohydrological Modeling with Stable Isotopes</title>
+      <link>https://keirancantilina.github.io/project/backup-of-shielas-projects/stable-isotope-project/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://keirancantilina.github.io/project/backup-of-shielas-projects/stable-isotope-project/</guid>
+      <description>Collaborators J Archibald, JO Knighton, CK Morris, MT Walter (all at Cornell University)
+Timeline 2016-2017
+Project Goal The goal of this project was to develop an ecohydrological model that could be used to test the two-water-world hypothesis presented here.
+Project Links  IsoJoFlow Ecohydrology Model Project Peer-Reviewed Publication  Acknowledgements Thanks to J. Evaristo, S Jasechko, and J. McDonnell for their paper that stoked our lab group conversations around this work.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>phosphorus on  </title>
+    <link>https://keirancantilina.github.io/tags/phosphorus/</link>
+    <description>Recent content in phosphorus on  </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019</copyright>
+    <lastBuildDate>Sun, 22 Jul 2018 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://keirancantilina.github.io/tags/phosphorus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Phosphorus Cycling in Stream Biofilms</title>
+      <link>https://keirancantilina.github.io/project/backup-of-shielas-projects/paos-streams-project/</link>
+      <pubDate>Sun, 22 Jul 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://keirancantilina.github.io/project/backup-of-shielas-projects/paos-streams-project/</guid>
+      <description>Collaborators PJ Sullivan (Cornell University), JM Regan (Penn State), HJ Carrick (Central Michigan University), AR Buda (USDA-ARS), NA Locke (Penn State), MT Walter (Cornell University)
+Timeline 2014-2015
+Project Goal The goal of this project was to test (1) the impact of alternating anaerobic/aerobic conditions on phosphorus cycling in stream biofilms and (2) whether observed patterns mimicked those of polyphosphate accumulating organisms (PAOs) in specialized waste-water treatment plants.
+Project Links  Project GitHub Repository Project Peer-Reviewed Publication  Acknowledgements Special thanks to the Mianus River Gorge Preserve Research Award Program and the EPA STAR Program for supporting this work.</description>
+    </item>
+    
+  </channel>
+</rss>
