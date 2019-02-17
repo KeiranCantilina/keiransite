@@ -39,9 +39,11 @@ This project began as a just-for-fun repurposing of an obsolete scanner, but I s
 
 You can see how brightly vegetation shows up in the photos below. In the 4th picture, the weird vertical artifacts are actually passing pedestrians. Because the scanmera acquires images slowly from left to right, any moving objects get distorted along the horizontal axis.
 
-The Scamera uses a 330mm doublet lens from an abandoned overhead projector. The scanner was heavily modified and none of the original optical assembly remains except for the imaging sensor. The sensor is so sensitive to IR that cardboard isn’t sufficiently opaque, hence the need to line the enclosure with foil. The only way to control exposure and depth of field is by using laser-cut cardboard apertures because there is no shutter.
+The Scamera uses a 330mm doublet lens from an abandoned overhead projector. The scanner was heavily modified and none of the original optical assembly remains except for the imaging sensor. The sensor is so sensitive to IR that cardboard isn’t sufficiently opaque, hence the need to line the enclosure with foil. The only way to control exposure and depth of field is by using laser-cut cardboard apertures because there is no shutter. 
 
-Future work involves a chassis overhaul (for better portability), improved lightproofness (which should fix contrast issues), and a more stable power supply (which should reduce the severe noise issue visible in pictures).
+The scanner likes to eat 16V, and due to lack of resources the current power supply is a horrible assembly consisting of a 16V switching power supply plugged into an automobile DC-AC converter which is hooked up to a 12V SLA battery salvaged from a dead UPS. One day I will use a 12V-16V boost converter like a normal person. For pseudo-portability, the whole thing is set up on a cart from IKEA. It's juuuust short enough that I have to stoop when pushing it around.
+
+Future work involves a chassis overhaul (for better portability), improved lightproofness (which should fix contrast issues), and a more stable/less noisy power supply (which should reduce the severe noise issue visible in pictures). 
 
 # Project Links
 - [Github repo](https://github.com/KeiranCantilina/Scanmera)
@@ -62,5 +64,7 @@ Future work involves a chassis overhaul (for better portability), improved light
 ![photo4](test034_contrast_compressed.png)
 ![photo5](11_21_2017_1604_f022_002.png)
 ![photo6](1121171702.jpg)
+![photo7](1115171600c.jpg)
+![photo8](1109171409.jpg)
 
 
