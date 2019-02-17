@@ -35,11 +35,11 @@ Nov 2017 - Current
 
 
 # Project Description
-This project began as a just-for-fun repurposing of an obsolete scanner, but I soon discovered that the linear CCD in this scanner is very sensitive to near-infrared (NIR) wavelengths. This sensitivity, along with the high resolution of images produced by the Scamera, means that I can potentially use it to measure the health of crops in fields by measuring the Normalized Difference Vegetation Index (NDVI), which is based on relative Red/IR reflectivity of plants. 
+This project began as a just-for-fun repurposing of an obsolete scanner, but I soon discovered that the linear CCD in this scanner is very sensitive to near-infrared (NIR) wavelengths. This sensitivity, along with the high resolution of images produced by the Scanmera, means that I can potentially use it to measure the health of crops in fields by measuring the Normalized Difference Vegetation Index (NDVI), which is based on relative Red/IR reflectivity of plants. 
 
 You can see how brightly vegetation shows up in the photos below. In the 4th picture, the weird vertical artifacts are actually passing pedestrians. Because the scanmera acquires images slowly from left to right, any moving objects get distorted along the horizontal axis.
 
-The Scamera uses a 330mm doublet lens from an abandoned overhead projector. The modified imaging assembly is so sensitive to IR that cardboard isn’t sufficiently opaque, hence the foil. The only way to control exposure and depth of field is by using laser-cut cardboard apertures because there is no shutter.
+The Scamera uses a 330mm doublet lens from an abandoned overhead projector. The scanner was heavily modified and none of the original optical assembly remains except for the imaging sensor. The sensor is so sensitive to IR that cardboard isn’t sufficiently opaque, hence the need to line the enclosure with foil. The only way to control exposure and depth of field is by using laser-cut cardboard apertures because there is no shutter.
 
 Future work involves a chassis overhaul (for better portability), improved lightproofness (which should fix contrast issues), and a more stable power supply (which should reduce the severe noise issue visible in pictures).
 
