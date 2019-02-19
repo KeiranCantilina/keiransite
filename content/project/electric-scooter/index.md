@@ -53,19 +53,19 @@ Believe it or not, I used to ride this horrible thing to school nearly every day
 
 
 # Acknowledgements
-Thanks to Hanna Lin for help with building, and to Dane Kouttron for donating parts(and for carrying some really weird looking stuff through airport security screening).
+Thanks to Hanna Lin for help with building, and to Dane Kouttron for donating parts (and for carrying some really weird looking stuff through airport security screening).
 
 
 # Project Photos
-![photo0](featured.png)
-![photo1](P1200996.JPG)
+{{< figure src="featured.png" title="The scooter as it looks currently" >}}
+{{< figure src="P1200996.JPG" title="Lots of hacksawing to get the new wheel to fit" >}}
 ![photo2](P1210007.JPG)
-![photo3](P1210016.JPG)
-![photo3b](P1210045.JPG) 
+{{< figure src="P1210016.JPG" title="Hanna removing the drum brake that came with the hubmotor" >}}
+{{< figure src="P1210045.JPG" title="Test rig (aka bench vise) for making sure the controller is connected with the correct polarity. Suddenly going backwards very fast is not fun." >}}
 ![photo4](https://github.com/KeiranCantilina/Ultimate-Deathtrap-old-chassis/blob/master/Ultimate%20Deathtrap%20Revived/CIMG0080.JPG?raw=true)
-![photo5](https://github.com/KeiranCantilina/Ultimate-Deathtrap-old-chassis/blob/master/Fabrication%20photos/0924171633.jpg?raw=true)
-![photo6](https://github.com/KeiranCantilina/Ultimate-Deathtrap-old-chassis/blob/master/Fabrication%20photos/0915172056.jpg?raw=true)
-![photo7](upgrade.png)
+{{< figure src="https://github.com/KeiranCantilina/Ultimate-Deathtrap-old-chassis/blob/master/Fabrication%20photos/0924171633.jpg?raw=true" title="View of scooter rear. You can see the little box with the red switch that the headlight buck converter lives in." >}}
+{{< figure src="https://github.com/KeiranCantilina/Ultimate-Deathtrap-old-chassis/blob/master/Fabrication%20photos/0915172056.jpg?raw=true" title="Scooter charger" >}}
+{{< figure src="upgrade.png" title="Drawings of parts for the new chassis, to eventually be water-jet cut out of aluminum plate" >}}
 ![photo8](https://github.com/KeiranCantilina/Ultimate-Deathtrap-New-Chassis/blob/master/Capture.PNG?raw=true)
 
 
