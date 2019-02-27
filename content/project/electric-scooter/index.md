@@ -33,10 +33,10 @@ tags = ["power electronics", "hardware hacks", "electronics", "mechanical design
 # Timeline
 Feb 2017 - Current
 
-
 # Project Description
 This project was spawned by a desire to make my daily commute to class faster. Being a poor grad student, paying for a campus parking pass was out of the question. I could have bought a bike, but when I found an old 80s kick scooter on Craigslist, I couldn't resist the temptation to build something ridiculous.
 
+# Project Description
 The build is fairly simple: a brushless hubmotor+wheel rescued from a dumpster replaces the rear wheel of the scooter. A cheap Chinese ebike motor controller and a trio of old NiCad drill batteries make up the power system. Paired with a handle throttle form Amazon, and I was good to go after a wee bit of hacksawing. Given that most of the parts were either found, Craigslisted on the cheap, or donated by generous well-wishing friends, this build was kept under the $50 mark. 
 
 Version 2 of this scooter replaced the drill batteries with 4 lithium-iron-phosphate battery packs very generously donated by a friend. These batteries were production prototypes of devices meant to be drop-in replacements for gel lead-acid batteries in backup applications. Unlike the old drill batteries, these are not as severely affected by the Minnesota cold, and they have a much higher energy and power density. I get 5Ah@56V with this battery arrangement, instead of <2Ah@48V. With the new pack, I got greatly increased range and acceleration and slightly increased top speed. Charging is accomplished using a Meanwell LED streetlight power supply (which does the constant-current regulation the batteries need to not get angry).

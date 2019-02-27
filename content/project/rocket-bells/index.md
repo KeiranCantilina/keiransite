@@ -92,6 +92,7 @@ Here's Auld Lang Syne played with Rocket Nozzle Bells:
 - [Github Repo](https://github.com/KeiranCantilina/Rocket-Bells)
 - [Bell synthesizer code](https://github.com/KeiranCantilina/FEA-Bell-simulation/blob/master/Bell%20sound%20simulation%20FINAL.R)
 - [Rocket Bell Soundfont](https://github.com/KeiranCantilina/Rocket-Bells/blob/master/Rocket%20Bells.sf2)
+- [Link CAD file on Onshape](https://cad.onshape.com/documents/6c25eac0e3cb486c7dd401a3/w/4c5b46447fceae725d8a6330/e/a087bc84e8836480a54b8bba)
 
 
 # Acknowledgements

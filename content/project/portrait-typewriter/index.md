@@ -33,10 +33,10 @@ tags = ["electronics", "hardware hacks", "microcontrollers", "python", "hardware
 # Timeline
 Aug 2017 - Sept 2017
 
+# Project Background
+This project began when I picked up a sad typewriter with a broken keyboard set out for free in front of the university library. Since I have a soft spot for obsolete technology, I gave it a new home. Repurposing it became a recreational exercise in both hardware-microcontroller and microcontroller-computer interfaces.
 
 # Project Description
-This project began when I picked up a sad typewriter with a broken keyboard set out for free in front of the university library. Since I have a soft spot for obsolete technology, I gave it a new home. Repurposing it became a recreational exercise in both hardware-microcontroller and microcontroller-computer interfaces. 
-
 Images are broken down into lines of text by a Python script on a laptop, which then sends lines of ASCII via a serial-USB interface to an Arduino-style microcontroller. The microcontroller then emulates typewriter keypresses using the transistor array to switch the typewriter’s keyboard matrix.
 
 Mapping out the keyboard matrix was tedious, but the trickiest part was getting the computer and microcontroller to be patient. The microcontroller can switch the keyboard matrix much faster than the typewriter's daisy wheel can spin, and the typewriter's keyboard buffer only holds a few characters (presumably because fingers are usually slow). Without some way to make the system wait for the typewriter to finish typing, the typewriter tends to receive characters faster than it can type or remember them. I solved this problem by estimating an average typing time per character, and forcing the microcontroller to wait that interval before sending another character. Once the microcontroller has sent a complete line, it sends a message back to the Python script that it is ready to have its serial comms buffer filled with another line. 
