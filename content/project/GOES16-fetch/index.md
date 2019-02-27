@@ -10,7 +10,7 @@ summary = "Want a (nearly) real-time picture of the Earth from space as your des
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["R", "remote sensing", "image processing", "web scraping"]
+tags = ["R", "remote sensing", "image processing", "web scraping", "coding"]
 
 # Optional external URL for project (replaces project detail page).
 # external_link = "http://example.org"

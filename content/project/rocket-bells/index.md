@@ -10,7 +10,7 @@ summary = "What would rocket nozzle bells sound like if they were played like mu
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["CAD", "finite element analysis", "R", "music", "audio synthesis", "fourier synthesis"]
+tags = ["CAD", "finite element analysis", "R", "music", "audio synthesis", "fourier synthesis", "coding"]
 
 # Optional external URL for project (replaces project detail page).
 # external_link = "http://example.org"

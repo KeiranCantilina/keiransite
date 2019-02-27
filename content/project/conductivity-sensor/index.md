@@ -10,7 +10,7 @@ summary = "Corrosion-immune and biofouling-resistant sensor for measuring conduc
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["sensors", "hydrology", "electronic design", "electrical engineering", "instrumentation"]
+tags = ["sensors", "hydrology", "electronics", "electrical engineering", "instrumentation", "microcontrollers", "coding"]
 
 # Optional external URL for project (replaces project detail page).
 # external_link = "http://example.org"

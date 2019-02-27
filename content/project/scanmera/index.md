@@ -10,7 +10,7 @@ summary = "Microtek ScanMaker4900 flatbed scanner modified into a large-format V
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["sensors", "hardware hacks", "photography", "instrumentation"]
+tags = ["sensors", "hardware hacks", "photography", "instrumentation", "electronics"]
 
 # Optional external URL for project (replaces project detail page).
 # external_link = "http://example.org"

@@ -10,7 +10,7 @@ summary = "80s childrens’ kick-scooter converted into an electric 20mph monstr
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["power electronics", "hardware hacks", "electronics", "mechanical design"]
+tags = ["power electronics", "hardware hacks", "electronics", "mechanical design", "CAD"]
 
 # Optional external URL for project (replaces project detail page).
 # external_link = "http://example.org"

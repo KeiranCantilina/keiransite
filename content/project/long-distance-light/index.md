@@ -10,7 +10,7 @@ summary = "A pair of networked RGB LED widgets that synchronously change color w
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["internet of things", "electronic design", "microcontrollers", "C++", "ESP8266", "Arduino"]
+tags = ["internet of things", "electronics", "microcontrollers", "C++", "ESP8266", "Arduino", "hardware hacks", "coding"]
 
 # Optional external URL for project (replaces project detail page).
 # external_link = "http://example.org"

@@ -35,18 +35,31 @@ filter_default = 0
 # Add or remove as many filters (`[[filter]]` instances) as you like.
 # Use "*" tag to show all projects or an existing tag prefixed with "." to filter by specific tag.
 # To remove toolbar, delete/comment all instances of `[[filter]]` below.
-#[[filter]]
-#  name = "All"
-#  tag = "*"
+[[filter]]
+  name = "All"
+  tag = "*"
 
-#[[filter]]
-#  name = "Water Quality"
-#  tag = ".water-quality"
+
+[[filter]]
+  name = "Electronics"
+  tag = "electronics"
   
-#[[filter]]
-#  name = "Water Quantity"
-#  tag = ".water-quantity"
-
+[[filter]]
+  name = "Mechanical"
+  tag = "mechanical design"
+  
+[[filter]]
+  name = "Microcontrollers"
+  tag = "microcontrollers"
+  
+[[filter]]
+  name = "Coding"
+  tag = "coding"
+  
+[[filter]]
+  name = "CAD/FEA"
+  tag = "CAD"
+  
 #[[filter]]
 #  name = "Other"
 #  tag = ".demo"

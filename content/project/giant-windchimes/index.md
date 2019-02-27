@@ -10,7 +10,7 @@ summary = "Very large windchimes precisely designed and tuned using FEA and CAD 
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["CAD", "finite element analysis", "metal fabrication", "music", "laser cutting"]
+tags = ["CAD", "finite element analysis", "metal fabrication", "music", "laser cutting", "mechanical design"]
 
 # Optional external URL for project (replaces project detail page).
 # external_link = "http://example.org"

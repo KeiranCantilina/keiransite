@@ -10,7 +10,7 @@ summary = "Brother SX-4000 electric typewriter modified to print JPGs as ASCII t
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["electronics", "hardware hacks", "microcontrollers", "python", "hardware-software"]
+tags = ["electronics", "hardware hacks", "microcontrollers", "python", "hardware-software", "coding"]
 
 # Optional external URL for project (replaces project detail page).
 # external_link = "http://example.org"
