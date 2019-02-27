@@ -59,7 +59,7 @@ Now that I had a model, it was time to figure out how it would sound. To figure 
 ___
 ### Campanology 101 detour
 
-In a normal musical cup-shaped bell, the bell is usually hung from its crown and struck at the rim (called the soundbow) with a clapper. When struck, a bell vibrates in many modes all at the same time, with each vibrational mode producing its own signature pitch. These pitches (known as "overtones") are not harmonically related, which is why bells sound kinda weird |compared to other musical instruments.
+In a normal musical cup-shaped bell, the bell is usually hung from its crown and struck at the rim (called the soundbow) with a clapper. When struck, a bell vibrates in many modes all at the same time, with each vibrational mode producing its own signature pitch. These pitches (known as "overtones") are not harmonically related, which is why bells sound kinda weird compared to other musical instruments.
 
 <center>{{< figure src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Erfurt_Bell.png/440px-Erfurt_Bell.png" title="First several bell overtones (picture from Wikipedia)" >}}</center>
 
