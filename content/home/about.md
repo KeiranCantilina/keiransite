@@ -10,14 +10,14 @@ weight = 1
 # List your academic interests.
 [interests]
   interests = [
-    "biotechnology",
-    "microbiology",
-    "plant science",
-    "hydrology",
     "instrumentation",
     "electrical engineering",
 	"data science",
 	"experimental design",
+	"biotechnology",
+    "microbiology",
+    "plant science",
+    "hydrology",
 	"interdisciplinary collaboration"
   ]
 
