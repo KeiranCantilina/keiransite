@@ -1,0 +1,22 @@
+Remove picture
+
+Move projects to top (rename to "projects" or "project portfolio"
+About me tab on toolbar
+Site title on toolbar
+Interests page
+
+Change project thumbnails (picky "techy" photos)
+Tuning fork FEA for windchimes
+Better picture for typewriter
+Make water sensor appear first
+Ultimate deathtrap heading typo
+Reformat to "Rocket bells" style
+
+Make interests a separate section
+
+------ Resume fixes
+Add contact info as text box
+Fix weird bullet spacing
+Add to data science section
+Make decision about interests
+Formatting the rightmost column

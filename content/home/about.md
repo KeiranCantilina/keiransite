@@ -5,7 +5,7 @@ active = true
 date = 2019-02-15T00:00:00
 
 # Order that this section will appear in.
-weight = 1
+weight = 2
 
 # List your academic interests.
 [interests]
@@ -41,4 +41,5 @@ I am a recent Master of Science graduate from the department of Bioproducts and 
 I've developed a toolbox of skills that has generalist characteristics by nature and specialist characteristics by education. My problem-solving style is a hybrid between the applied tactics of engineers (“Let's make something happen”) and the experimental methods of scientists (“Let's find out how this works”). My professional research spans a variety of topics in fields ranging from molecular biology to electrical engineering. 
 
 In my free time, I love to work on personal projects that make use of discarded electronics, broken appliances, and obsolete hardware. In the spirit of promoting upcycling, I enjoy the challenge of reusing and re-purposing materials with the smallest budget possible. This website serves as a portfolio for some of these side projects.
+
 Outside of research, I enjoy playing the [carillon](https://en.wikipedia.org/wiki/Carillon), baking bread, pickling, amateur radio, and building dangerously speedy electric scooters.
