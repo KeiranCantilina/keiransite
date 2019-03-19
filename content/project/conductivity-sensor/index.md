@@ -3,7 +3,7 @@
 title = "Contactless Water Conductivity Sensor"
 
 # Date this page was created.
-date = 2019-02-15T00:00:00
+date = 2019-03-15T00:00:00
 
 # Project summary to display on homepage.
 summary = "Corrosion-immune and biofouling-resistant sensor for measuring conductivity in natural or urban freshwater systems"
@@ -48,7 +48,7 @@ After coming up with the operating principle of the sensor, I designed, simulate
 
 
 # Project Photos
-![photo1](0215181346.jpg)
-![photo2](0215181346b.jpg)
-![photo2](1121171239a.jpg)
+<center>{{< figure src="0215181346.jpg" title="The testing and characterization setup" >}}</center>
+<center>{{< figure src="0215181346b.jpg" title="Tsunami DDS/ucontroller board" >}}</center>
+<center>{{< figure src="1121171239a.jpg" title="Top view of sensor before potting in epoxy" >}}</center>
 

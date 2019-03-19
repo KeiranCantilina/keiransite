@@ -63,10 +63,10 @@ Thanks to people who throw out good materials for others to reuse.
 
 
 # Project Photos
-<center>{{< figure src="featured.png" title="Final version with transparent rigging" >}}
+<center>{{< figure src="featured1.png" title="Final version with transparent rigging" >}}
 {{< figure src="Capture.PNG" title="Neither of these pictures of the final project are very good, sorry" >}}
 {{< figure src="Capture2.PNG" title="Prototype with MDF rigging" >}}
 {{< figure src="Capture3.PNG" title="Draft plans" >}}
-{{< figure src="tuning fork FEA.png" title="Example of FEA analysis in AutoDesk Inventor" >}}</center>
+{{< figure src="featured.png" title="Example of FEA analysis in AutoDesk Inventor" >}}</center>
 
 

@@ -57,6 +57,7 @@ Mapping out the keyboard matrix was tedious, but the trickiest part was getting 
 
 
 # Project Photos
+<center>{{< figure src="featured1.png" title="The final product produced by the typewriter" >}}</center>
 ![photo1](https://github.com/KeiranCantilina/Typwriter-Portrait-Project/blob/master/FInal%20setup.jpg?raw=true)
 ![photo2](https://github.com/KeiranCantilina/Typwriter-Portrait-Project/blob/master/0826171633.jpg?raw=true)
 ![photo3](https://github.com/KeiranCantilina/Typwriter-Portrait-Project/blob/master/0825171817a.jpg?raw=true)

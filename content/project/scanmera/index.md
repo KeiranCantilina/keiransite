@@ -34,14 +34,24 @@ tags = ["sensors", "hardware hacks", "photography", "instrumentation", "electron
 Nov 2017 - Current
 
 
-# Project Description
+# Project Background
 This project began as a just-for-fun repurposing of an obsolete scanner, but I soon discovered that the linear CCD in this scanner is very sensitive to near-infrared (NIR) wavelengths. This sensitivity, along with the high resolution of images produced by the Scanmera, means that I can potentially use it to measure the health of crops in fields by measuring the Normalized Difference Vegetation Index (NDVI), which is based on relative Red/IR reflectivity of plants. 
 
-You can see how brightly vegetation shows up in the photos below. In the 4th picture, the weird vertical artifacts are actually passing pedestrians. Because the scanmera acquires images slowly from left to right, any moving objects get distorted along the horizontal axis.
+# Project Description
+<center>{{< figure src="test034_contrast_compressed.png" title="" >}}</center>
+
+You can see how brightly vegetation shows up in the photo above. The weird vertical artifacts are actually passing pedestrians. Because the scanmera acquires images slowly from left to right, any moving objects get distorted along the horizontal axis.
 
 The Scamera uses a 330mm doublet lens from an abandoned overhead projector. The scanner was heavily modified and none of the original optical assembly remains except for the imaging sensor. The sensor is so sensitive to IR that cardboard isn’t sufficiently opaque, hence the need to line the enclosure with foil. The only way to control exposure and depth of field is by using laser-cut cardboard apertures because there is no shutter. 
 
+<center>{{< figure src="1109171424.jpg" title="Doublet lens" >}}</center>
+<center>{{< figure src="1109171505.jpg" title="Modified imaging sensor assembly" >}}</center>	
+<center>{{< figure src="1121171702.jpg" title="Cardboard apertures" >}}</center>
+
 The scanner likes to eat 16V, and due to lack of resources the current power supply is a horrible assembly consisting of a 16V switching power supply plugged into an automobile DC-AC converter which is hooked up to a 12V SLA battery salvaged from a dead UPS. One day I will use a 12V-16V boost converter like a normal person. For pseudo-portability, the whole thing is set up on a cart from IKEA. It's juuuust short enough that I have to stoop when pushing it around.
+
+<center>{{< figure src="1109171409.jpg" title="Sketchy power system" >}}</center>
+<center>{{< figure src="Capture2.PNG" title="The system on its glorious IKEA cart" >}}</center>
 
 Future work involves a chassis overhaul (for better portability), improved lightproofness (which should fix contrast issues), and a more stable/less noisy power supply (which should reduce the severe noise issue visible in pictures). 
 

@@ -41,6 +41,8 @@ I decided to make a weekend project out of creating my own set! A brief bit of g
 # Project Description
 The current design uses a pair of Wildfires (an Arduino-flavor board made by [WickedDevice](https://shop.wickeddevice.com/product/wildfire/)) with RGB LEDS inside of a pair of very cheap button lights from Amazon. The Wildfire is not super well-suited to this project, but it has an integrated ESP8266 wifi chip and a microSD thingy and also I had like 5 of them from work, so that's what I used.
 
+{{< figure src="Capture4.PNG" title="Wildfire board in situ with RGB LED module resting on top" >}}</center>
+
 The software side of things was supposed to be pretty simple. The Wildfire randomly generates 3 values (for RGB) when a button press is detected. These values are published via MQTT to a feed on io.adafruit.com. The device is also subscribed to the same feed, and will collect both values it publishes and values from other devices on the feed. When data is received through the subscription, the device parses the data and uses the RGB values to change its own color.
 
 This was complicated by very buggy firmware on the Wildfire board which made it randomly stop talking to the ESP8266. In addition, for some reason, comments in certain parts of the code would completely prevent the board from subscribing to the MQTT feed. This makes no sense but I was able to work around it. This project would probably have been massively easier if I was able to buy a pair of Adafruit Feathers or even just two normal Arduino pro minis paired with two ESP8266 modules.
